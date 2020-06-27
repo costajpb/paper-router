@@ -46,7 +46,7 @@ var Router = Class.extend({
             resources: this.resources.bind( this ),
             get: this.get.bind( this ),
             post: this.post.bind( this ),
-            patch: this.post.bind( this ),
+            patch: this.patch.bind( this ),
             put: this.put.bind( this ),
             del: this.del.bind( this ),
             delete: this.delete.bind( this )
