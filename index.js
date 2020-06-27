@@ -33,13 +33,13 @@ var Router = Class.extend({
      * };
      *
     */
-    init: function( server, pathToControllersDir, routes, versioned ) {
-        pathToControllersDir = pathToControllersDir || __dirname + '/controllers';
+    init: function( server, controllers, routes, versioned ) {
+        controllers = controllers || __dirname + '/controllers';
         this._routes = {};
         this.server = server;
         this.routes = routes;
         this.versioned = versioned;
-        this.controllers = this.getControllers( pathToControllersDir );
+        this.controllers = typeof controllers === 'string' ? this.getControllers( controllers ) : controllers();
         var self = this;
 
         this.routes({
